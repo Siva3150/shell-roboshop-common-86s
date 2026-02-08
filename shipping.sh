@@ -22,12 +22,6 @@ else
     echo -e "Shipping data is already loaded ... $Y SKIPPING $N"
 fi
 
-systemctl restart shipping &>>$LOG_FILE
-VALIDATE $? "Restarting Shipping"
-
-END_TIME=$(date +%s)
-TOTAL_TIME=$(( $END_TIME - $START_TIME ))
-echo -e "Script executed in: $Y $TOTAL_TIME Seconds $N"
 
 app_restart
 print_total_time
